@@ -125,6 +125,8 @@
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('headersetup.edit', $id=$header->id) }}" class="dropdown-item">Header Setup</a></li>
                             <li><a href="{{ route('footersetup.edit', $id=$footer->id) }}" class="dropdown-item">Footer Setup</a></li>
+                            <li><a href="{{ route('slidersetup.index') }}" class="dropdown-item">Slider</a></li>
+
                         </ul>
                     </li>
 

@@ -13,7 +13,10 @@ Route::post('/user_info_update', 'Auth\RegisterController@updateProfileInfo')->n
 Route::get('/update_profile_pic/{userId}', 'Auth\RegisterController@updateProfilePic')->name('update_profile_pic');
 Route::post('/update_porofile_pic', 'Auth\RegisterController@updateProfileImage')->name('update_porofile_pic');
 Route::post('/password_update', 'Auth\RegisterController@passwordUpdate')->name('password_update');
+
 //Header Settings
 //
 Route::resource('/headersetup', 'HeaderSetupController');
 Route::resource('/footersetup', 'FooterSetupController');
+Route::resource('/slidersetup', 'SliderController');
+Route::get('/status/{id}', 'SliderController@ChangeStatus')->name('status');
