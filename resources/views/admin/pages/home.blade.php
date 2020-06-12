@@ -1,4 +1,5 @@
 @extends('admin.master')
+@section('title') Home @endsection
 @section('content')
     <!--Slider Start-->
 <section class="container-fluid">

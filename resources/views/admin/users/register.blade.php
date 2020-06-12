@@ -1,29 +1,35 @@
 @extends('admin.master')
+@section('title') Register @endsection
 @section('content')
 <section class="container-fluid">
-    <div class="row content login-form">
+    <div class="row content register-form">
         <div class="col-12 pl-0 pr-0">
             <div class="form-group">
                 <div class="col-sm-12">
                     <h4 class="text-center font-weight-bold font-italic mt-3">User Registration Form</h4>
                 </div>
             </div>
-            <form method="POST" action="{{ route('login') }}" enctype="multipart/form-data" autocomplete="off" class="form-inline">
+            <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data" autocomplete="off" class="form-inline">
                 @csrf
 
-                {{-- <div class="form-group col-12 mb-3">
+                <div class="form-group col-12 mb-3">
                     <label for="role" class="col-sm-3 col-form-label text-right">Role</label>
 
-                    <select name="role" class="form-control col-sm-9" id="role">
+                    <select name="role" class="form-control col-sm-9 @error('role') is-invalid @enderror" id="role">
                         <option value="">Select Role</option>
                         <option value="Admin">Admin</option>
                         <option value="User">User</option>
                     </select>
-                </div> --}}
+                    @error('role')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                </div>
 
                 <div class="form-group col-12 mb-3">
                     <label for="name" class="col-sm-3 col-form-label text-right">Name</label>
-                    <input id="name" type="text" class="col-sm-9 form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Name" required>
+                    <input id="name" type="text" class="col-sm-9 form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Name">
                     @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -31,14 +37,18 @@
                                 @enderror
                 </div>
 
-                {{-- <div class="form-group col-12 mb-3">
+                <div class="form-group col-12 mb-3">
                     <label for="mobile" class="col-sm-3 col-form-label text-right">Mobile</label>
-                    <input id="mobile" type="text" class="col-sm-9 form-control" name="mobile" value="" placeholder="8801xxxxxxxxx" required>
-                </div> --}}
-
+                    <input id="mobile" type="text" class="col-sm-9 form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" placeholder="8801xxxxxxxxx">
+                    @error('mobile')
+                    <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
                 <div class="form-group col-12 mb-3">
                     <label for="email" class="col-sm-3 col-form-label text-right">E-Mail Address</label>
-                    <input id="email" type="email" class="col-sm-9 form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email Address" required>
+                    <input id="email" type="email" class="col-sm-9 form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email Address">
                     @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -48,7 +58,7 @@
 
                 <div class="form-group col-12 mb-3">
                     <label for="password" class="col-sm-3 col-form-label text-right">Password</label>
-                    <input id="password" type="password" class="col-sm-9 form-control @error('password') is-invalid @enderror" name="password" placeholder="Password" required>
+                    <input id="password" type="password" class="col-sm-9 form-control @error('password') is-invalid @enderror" name="password" placeholder="Password">
                     @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -58,7 +68,7 @@
 
                 <div class="form-group col-12 mb-3">
                     <label for="password-confirm" class="col-sm-3 col-form-label text-right">Confirm Password</label>
-                    <input id="password-confirm" type="password" class="col-sm-9 form-control" name="password_confirmation" placeholder="Confirm Password" required>
+                    <input id="password-confirm" type="password" class="col-sm-9 form-control" name="password_confirmation" placeholder="Confirm Password">
                 </div>
 
                 <div class="form-group col-12 mb-3">

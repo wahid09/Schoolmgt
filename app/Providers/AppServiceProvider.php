@@ -2,7 +2,12 @@
 
 namespace App\Providers;
 
+use App\FooterSetup;
+use App\HeaderSetup;
+use Auth;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +28,23 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Schema::defaultStringLength(191);
+
+        view::composer('admin.includes.header', function($view){
+            $user = Auth::user();
+            $header = HeaderSetup::first();
+            $footer = FooterSetup::first();
+            $view->with([
+                'user'   => $user,
+                'header' => $header,
+                'footer' => $footer,
+            ]);
+        });
+        view::composer('admin.includes.footer', function($view){
+            $footer = FooterSetup::first();
+            $view->with([
+                'footer' => $footer,
+            ]);
+        });
     }
 }

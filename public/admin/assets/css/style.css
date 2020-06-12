@@ -49,6 +49,12 @@ body {
 .login-form {
     width: 50%;
     margin-left: 350px;
+    margin-top: 200px;
+    margin-bottom: 10px;
+}
+.register-form{
+    width: 50%;
+    margin-left: 350px;
     margin-top: 20px;
     margin-bottom: 10px;
 }
@@ -182,3 +188,16 @@ body {
     outline-style: none !important;
 }
 /*Owl carosel End*/
+.profile-info{
+    border: 1px;
+}
+.content-up{
+    border: 2px solid #9bd770;
+    color: #1b3409;
+    margin: 5px -10px;
+    border-radius: 5px;
+    background-color: #ebf7e3;
+    padding: 5px;
+    margin-left: 200px;
+    margin-right: 200px;
+}

@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -40,6 +43,30 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        return view('admin.users.login');
+        $user = User::all();
+        if(count($user)>0){
+            return view('admin.users.login');
+        }else{
+            $user = new User();
+            $user->role = 'Admin';
+            $user->name = 'Admin';
+            $user->mobile = '01765153253';
+            $user->email = 'admin@admin.com';
+            $user->password = Hash::make('12345678');
+            $user->save();
+
+            return view('admin.users.login');
+
+        }
+        
+    }
+    public function username()
+    {
+        //return 'email';
+        return 'mobile';
+    }
+    protected function loggedOut(Request $request)
+    {
+        return redirect('/login');
     }
 }
