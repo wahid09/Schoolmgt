@@ -20,3 +20,9 @@ Route::resource('/headersetup', 'HeaderSetupController');
 Route::resource('/footersetup', 'FooterSetupController');
 Route::resource('/slidersetup', 'SliderController');
 Route::get('/status/{id}', 'SliderController@ChangeStatus')->name('status');
+
+//Admin settings
+Route::resource('/schoolmgt', 'SchoolManagementController');
+Route::get('/status_update/{id}', 'SchoolManagementController@StatusUpdate')->name('status_update');
+Route::resource('/classmgt', 'ClassMgtController');
+Route::get('/status_update/{id}', 'ClassMgtController@StatusUpdate')->name('status_update');

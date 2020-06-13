@@ -89,16 +89,14 @@
                     <li class="dropdown-submenu">
                         <a class="dropdown-item dropdown-toggle" href="#">School</a>
                         <ul class="dropdown-menu">
-                            <li><a href="#" class="dropdown-item">Add School</a></li>
-                            <li><a href="#" class="dropdown-item">School List</a></li>
+                            <li><a href="{{ route('schoolmgt.index') }}" class="dropdown-item">School Mgt</a></li>
                         </ul>
                     </li>
 
                     <li class="dropdown-submenu">
                         <a class="dropdown-item dropdown-toggle" href="#">Class</a>
                         <ul class="dropdown-menu">
-                            <li><a href="#" class="dropdown-item">Add Class</a></li>
-                            <li><a href="#" class="dropdown-item">Class List</a></li>
+                            <li><a href="{{ route('classmgt.index') }}" class="dropdown-item">Class Mgt</a></li>
                         </ul>
                     </li>
 
