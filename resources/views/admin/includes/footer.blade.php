@@ -15,7 +15,7 @@
 <!--Footer End-->
 
     <!--    jQuery-->
-    <script src="{{asset('/')}}/admin/assets/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="{{asset('/')}}/admin/assets/js/jquery-3.5.1.js"></script>
     <!--    magnific popup-->
     <script src="{{asset('/')}}/admin/assets/plugins/magnific-popup/js/jquery.magnific-popup.min.js"></script>
     <!--    Carousel-->

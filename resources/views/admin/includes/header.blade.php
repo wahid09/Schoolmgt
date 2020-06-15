@@ -103,8 +103,14 @@
                     <li class="dropdown-submenu">
                         <a class="dropdown-item dropdown-toggle" href="#">Batch</a>
                         <ul class="dropdown-menu">
-                            <li><a href="#" class="dropdown-item">Add Batch</a></li>
-                            <li><a href="#" class="dropdown-item">Batch List</a></li>
+                            <li><a href="{{ route('batchmgt.index') }}" class="dropdown-item">Batch Mgt</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="#">Student Mgt</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ route('coachingtype.index') }}" class="dropdown-item">Coaching Type</a></li>
                         </ul>
                     </li>
 

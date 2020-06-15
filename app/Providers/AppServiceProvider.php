@@ -33,6 +33,7 @@ class AppServiceProvider extends ServiceProvider
         view::composer('admin.includes.header', function($view){
             $user = Auth::user();
             $header = HeaderSetup::first();
+            //dd($header);
             $footer = FooterSetup::first();
             $view->with([
                 'user'   => $user,
